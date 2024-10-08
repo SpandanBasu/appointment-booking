@@ -1,0 +1,69 @@
+<div class="container">
+
+
+
+    <div class ="card mt-3">
+        <div class="row">
+            <div class="col">
+                <h2 class="text-center">Create a new Appointment</h2>
+            </div>
+        </div>
+
+        <div class="row mt-3 mb-3">
+            <div class="col-md-4">
+                <input class="form-control" [(ngModel)]="newAppTitle" placeholder="Appointment Title">
+            </div>
+            <div class="col-md-3">
+                <input class="form-control" [(ngModel)]="newAppDesc" placeholder="Description">
+            </div>
+            <div class="col-md-3">
+                <input class="form-control" [(ngModel)] ="newAppDate" type="date" placeholder="Time">
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-primary w-100" (click)="addAppointment()">Add</button>
+            </div>
+
+        </div>
+    </div>
+
+    <h2 class="text-center mt-5">Appointments</h2>
+    <ul class="list-group mt-3">
+        <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let appointment of appointments; index as i">
+            {{appointment.appId+" "+appointment.appTitle+" "+appointment.appDescription+" "+appointment.appTime}}
+            <button class="btn btn-danger " (click)="removeAppointment(i)">Delete</button>
+        </li>
+    </ul>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
